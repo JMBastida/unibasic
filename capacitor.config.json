@@ -1,0 +1,13 @@
+{
+  "appId": "com.uji.unibasic",
+  "appName": "unibasic",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

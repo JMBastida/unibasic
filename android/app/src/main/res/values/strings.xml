@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">unibasic</string>
+    <string name="title_activity_main">unibasic</string>
+    <string name="package_name">com.uji.unibasic</string>
+    <string name="custom_url_scheme">com.uji.unibasic</string>
+</resources>

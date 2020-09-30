@@ -1,5 +1,7 @@
 {
   "name": "unibasic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
