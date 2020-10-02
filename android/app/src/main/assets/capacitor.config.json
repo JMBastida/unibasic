@@ -5,6 +5,14 @@
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
+    "CapacitorFirebaseAuth": {
+      "providers": ["google.com"],
+      "languageCode": "es",
+      "nativeAuth": true,
+      "permissions": {
+           "google": ["profile", "https://www.googleapis.com/auth/drive"]
+       }
+    },
     "SplashScreen": {
       "launchShowDuration": 0
     }

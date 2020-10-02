@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "157056954647",
+    "firebase_url": "https://unibasic-d5a99.firebaseio.com",
+    "project_id": "unibasic-d5a99",
+    "storage_bucket": "unibasic-d5a99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157056954647:android:b710449af77a5d41ecc752",
+        "android_client_info": {
+          "package_name": "com.uji.unibasic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157056954647-92b0t2blt14kggaiv1k26tn1qhahr95l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uji.unibasic",
+            "certificate_hash": "65649e46612afc25d34a6ea9a97c991a6fa3a0d6"
+          }
+        },
+        {
+          "client_id": "157056954647-4j7gnuelgin1m5904c1hebf74tub8bnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxXBFf1bGG94l9Um7mfYQ5fp4ZicsK9JM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157056954647-4j7gnuelgin1m5904c1hebf74tub8bnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
