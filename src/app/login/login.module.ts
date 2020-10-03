@@ -9,15 +9,18 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { AuthService } from '../services/auth.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { VerifyComponent } from './verify/verify.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    AngularFireStorageModule
   ],
-  declarations: [LoginPage, WelcomeComponent],
+  declarations: [LoginPage, WelcomeComponent, VerifyComponent],
   providers: [AuthService]
 })
 export class LoginPageModule {}
