@@ -8,6 +8,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FirestoreService } from './firestore.service';
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
+import { Plugins } from '@capacitor/core';
+import { Platform } from '@ionic/angular';
+
+const { Storage } = Plugins;
 
 @Injectable({
   providedIn: 'root',
@@ -19,15 +23,16 @@ export class AuthService {
     public ngFireAuth: AngularFireAuth,
     private firestore: FirestoreService,
     public router: Router,
-    public ngZone: NgZone
+    public ngZone: NgZone,
+    public platform: Platform
   ) {
-    this.ngFireAuth.authState.subscribe((user) => {
+    this.ngFireAuth.authState.subscribe(async (user) => {
       if (user) {
         this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
+        this.platform.is("capacitor") ? await Storage.set({key: 'user',value:JSON.stringify(this.userData)}) : localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
-        localStorage.setItem('user', null);
+        this.platform.is("capacitor") ? await Storage.set({key: 'user',value:null}) : localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
       }
     });
@@ -63,15 +68,15 @@ export class AuthService {
   }
 
   // Returns true when user is looged in
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
+  async isLoggedIn(): Promise<boolean> {
+    const user = this.platform.is("capacitor") ? await Storage.get({ key: 'user' }): JSON.parse(localStorage.getItem('user'));
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
   // Returns true when user's email is verified
   async isEmailVerified(): Promise<boolean> {
     let emailVerified: boolean;
-    const user: UserInfo = JSON.parse(localStorage.getItem('user'));
+    const user: UserInfo = this.platform.is("capacitor") ? await Storage.get({ key: 'user' }):JSON.parse(localStorage.getItem('user'));
     const firestoreUser = await (
       await this.firestore.consultar('users', user.uid)
     ).subscribe((resultado) => {

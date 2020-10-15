@@ -12,12 +12,16 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { fancyAnimation } from './animations/fancy';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListFakeData } from './services/fake-data';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot({ mode: 'md', navAnimation: fancyAnimation }),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -28,6 +32,7 @@ import { fancyAnimation } from './animations/fancy';
     SplashScreen,
     AngularFirestoreModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ListFakeData
   ],
   bootstrap: [AppComponent],
 })

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>157056954647-dr5p299ft9uel0o6e7g419t2vt94tr3c.apps.googleusercontent.com</string>
+	<string>157056954647-ppjqesft7chv7jr9p4rjnhhso99kqd9t.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.157056954647-dr5p299ft9uel0o6e7g419t2vt94tr3c</string>
+	<string>com.googleusercontent.apps.157056954647-ppjqesft7chv7jr9p4rjnhhso99kqd9t</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>157056954647-92b0t2blt14kggaiv1k26tn1qhahr95l.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.uji.unibasic</string>
+	<string>com.unibasic</string>
 	<key>PROJECT_ID</key>
 	<string>unibasic-d5a99</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:157056954647:ios:d94d6d896f80ec32ecc752</string>
+	<string>1:157056954647:ios:f7a3403aba50cfa0ecc752</string>
 	<key>DATABASE_URL</key>
 	<string>https://unibasic-d5a99.firebaseio.com</string>
 </dict>

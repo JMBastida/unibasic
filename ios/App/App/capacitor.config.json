@@ -10,7 +10,7 @@
       "languageCode": "es",
       "nativeAuth": true,
       "permissions": {
-           "google": ["profile", "https://www.googleapis.com/auth/drive"]
+           "google": ["profile"]
        }
     },
     "SplashScreen": {
