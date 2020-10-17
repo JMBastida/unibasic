@@ -18,7 +18,8 @@
     <ion-searchbar
       placeholder="Buscar ..."
       [animated]="true"
-      (ionBlur)="onInput($event)"
+      showCancelButton="focus"
+      (ionCancel)="onInput($event)"
       (ionFocus)="onInput($event)"
     ></ion-searchbar>
   </div>

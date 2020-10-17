@@ -9,6 +9,7 @@ import { ActivitiesComponent } from './components/activities/activities.componen
 import { FeaturedComponent } from './components/featured/featured.component';
 import { FadeComponent } from '../animations/fade/fade.component';
 import { FilteringComponent } from './components/filtering/filtering.component';
+import { FiltersComponent } from './components/filtering/filters/filters.component';
 
 
 @NgModule({
@@ -18,6 +19,6 @@ import { FilteringComponent } from './components/filtering/filtering.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, ActivitiesComponent, FeaturedComponent, FadeComponent, FilteringComponent]
+  declarations: [HomePage, ActivitiesComponent, FeaturedComponent, FadeComponent, FilteringComponent, FiltersComponent]
 })
 export class HomePageModule {}
