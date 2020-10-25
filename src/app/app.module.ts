@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { fancyAnimation } from './animations/fancy';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListFakeData } from './services/fake-data';
+import { PushNotificationsService } from './services/push-notifications.service';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ListFakeData } from './services/fake-data';
     SplashScreen,
     AngularFirestoreModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    ListFakeData
+    ListFakeData,
+    PushNotificationsService
   ],
   bootstrap: [AppComponent],
 })
