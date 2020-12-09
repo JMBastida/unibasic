@@ -7,24 +7,24 @@ const redirectLoggedInToItems = () =>  redirectLoggedInTo(['home']);
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
-      canActivate: [AngularFireAuthGuard],
-      data: { authGuardPipe: redirectUnauthorizedToLogin }
+      //canActivate: [AngularFireAuthGuard],
+      //data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
-  {
+  /*{
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
-  },
+  },*/
   {
     path: 'login',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginPageModule),
     canActivate: [AngularFireAuthGuard],
     data: {authGuardPipe: redirectLoggedInToItems}
-  },
+  }
 ];
 
 @NgModule({

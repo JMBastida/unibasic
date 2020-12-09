@@ -5,7 +5,7 @@
   <input type="radio" id="tab4" name="tab-control" />
   <input type="radio" id="tab5" name="tab-control" />
   <input type="radio" id="tab6" name="tab-control" />
-  <ul>
+  <ul (click)="resetForm()">
     <li title="Todo">
       <label for="tab1" role="button"> <span>Todo</span></label>
     </li>
@@ -30,6 +30,7 @@
   <div class="content">
     <section>
       <br />
+
       <ion-segment
         (ionChange)="segmentChanged($event)"
         mode="ios"
@@ -45,33 +46,55 @@
       </ion-segment>
     </section>
     <section>
-      <div class="selector" style="float: left">
-        <ion-select placeholder="Carrera" okText="OK" cancelText="Cancelar">
-          <ion-select-option value="f">Ing informática</ion-select-option>
-          <ion-select-option value="m"
-            >Finanzas y contabilidad</ion-select-option
+      <form [formGroup]="todoForm">
+        <div class="selector" style="float: left">
+          <ion-select
+            name="degree"
+            formControlName="degree"
+            placeholder="Carrera"
+            cancelText="Cancelar"
+            [interfaceOptions]="customActionSheetOptions"
+            interface="action-sheet"
+            (ionChange)="degreeSelected($event)"
+            #degreeSelection
           >
-        </ion-select>
-      </div>
-      <div class="selector" style="float: right">
-        <ion-select placeholder="Asignatura" disabled>
-          <ion-select-option value="f">Sistemas operativos</ion-select-option>
-          <ion-select-option value="m">Algoritmia</ion-select-option>
-        </ion-select>
-      </div>
-      <ion-segment
-        (ionChange)="segmentChanged($event)"
-        mode="ios"
-        color="primary"
-        value="recent"
-      >
-        <ion-segment-button value="rated">
-          <ion-label>Valoración</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="recent">
-          <ion-label>Recientes</ion-label>
-        </ion-segment-button>
-      </ion-segment>
+            <ion-select-option
+              *ngFor="let carrera of carreras; index as i"
+              [value]="i"
+            >
+              {{
+                carrera.degree + " (" + carrera.semester + ")" | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </div>
+        <div class="selector" style="float: right">
+          <ion-select placeholder="Asignatura" formControlName="subject">
+            <ion-select-option
+              *ngFor="let asginatura of asignaturas"
+              [value]="asginatura.$key"
+            >
+              {{
+                asginatura.nombreAsignatura | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </div>
+
+        <ion-segment
+          (ionChange)="segmentChanged($event)"
+          mode="ios"
+          color="primary"
+          value="recent"
+        >
+          <ion-segment-button value="rated">
+            <ion-label>Valoración</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="recent">
+            <ion-label>Recientes</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </form>
     </section>
     <section>
       <h2>Shipping</h2>
@@ -92,7 +115,7 @@
     </section>
   </div>
   <div class="save">
-    <ion-chip color="primary" outline>
+    <ion-chip color="primary" outline type="submit" (click)="submitForm()">
       <ion-icon name="search-circle-outline" color="primary"></ion-icon>
       <ion-label color="primary">Buscar</ion-label>
     </ion-chip>

@@ -174,7 +174,15 @@ $content-selector: "~ .content > section";
           left: 1px;
         }
       }
+      ion-select {
+        text-transform: capitalize;
+      }
     }
+  }
+  .actionSheet {
+    --button-background: blue;
+    --max-height: 50vh;
+    text-transform: lowercase;
   }
 
   .save {
@@ -248,7 +256,7 @@ $content-selector: "~ .content > section";
         overflow: hidden;
 
         .selector {
-          max-width: 50%;
+          max-width: 45%;
           margin: 2%;
         }
 

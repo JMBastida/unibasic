@@ -1,0 +1,59 @@
+ion-item {
+  border-radius: 14px;
+  box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.08);
+  ion-row {
+    ion-col {
+      padding-inline-start: 0px;
+      .text {
+        margin-left: 15px;
+        color: rgb(177, 176, 176);
+        font-size: small;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+      }
+    }
+  }
+  ion-chip {
+    height: 20px;
+    width: 65px;
+    //background: #ed576b;
+    margin: 0 auto;
+    margin-inline-start: 0px;
+
+    ion-avatar {
+      padding: 4px 2px;
+      display: flex;
+      justify-content: center;
+      margin-inline-end: 0px;
+      img {
+        width: 70%;
+        height: auto;
+      }
+    }
+    ion-icon {
+      font-size: small;
+      font-weight: bold;
+    }
+    ion-label {
+      font-size: xx-small;
+      font-weight: bold;
+    }
+  }
+  ion-col:nth-of-type(1) ion-chip {
+    background: #ed576b;
+  }
+  ion-col:nth-of-type(2) ion-chip {
+    background: rgb(231, 231, 108);
+  }
+  ion-col:nth-of-type(3) ion-chip {
+    background: rgb(107, 224, 107);
+  }
+  ion-col:nth-of-type(n) ion-chip.disabled {
+    background: rgb(192, 192, 191);
+  }
+}

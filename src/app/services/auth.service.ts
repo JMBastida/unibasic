@@ -79,7 +79,7 @@ export class AuthService {
     const user: UserInfo = this.platform.is("capacitor") ? await Storage.get({ key: 'user' }):JSON.parse(localStorage.getItem('user'));
     const firestoreUser = await (
       await this.firestore.consultar('users', user.uid)
-    ).subscribe((resultado) => {
+    ).subscribe((resultado:any) => {
       // Preguntar si se hay encontrado un document con ese ID
       if (resultado.payload.data()['verified']) {
         console.log(resultado.payload.data()['verified']);

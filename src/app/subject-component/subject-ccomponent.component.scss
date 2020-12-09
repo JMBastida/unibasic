@@ -1,0 +1,50 @@
+ion-header {
+  height: 25vh;
+  ion-toolbar {
+    --background: url("/assets/uji-paraninfo.jpg") no-repeat center;
+    color: #ffffff;
+    //padding-bottom: 25%;
+    height: 100%;
+    border-radius: 0 0 20% 20%;
+  }
+}
+
+ion-col {
+  padding: 0;
+}
+
+ion-content {
+  --background: #f6f6f6;
+}
+
+.bigcard {
+  margin-top: -100px;
+  z-index: 10;
+  padding: 6px;
+  box-shadow: none;
+  box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 40px;
+  overflow: visible;
+  img {
+    width: 30%;
+    margin: -60px auto auto 35%;
+  }
+}
+.smallcard {
+  z-index: 10;
+  top: 10px;
+  left: 10%;
+  right: 10%;
+  padding: 2px;
+  box-shadow: none;
+  box-shadow: 0px 3px 45px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 40px;
+  overflow: visible;
+  position: fixed;
+  visibility: hidden;
+  img {
+    width: 20%;
+    margin: -5% auto auto 40%;
+  }
+}
+
