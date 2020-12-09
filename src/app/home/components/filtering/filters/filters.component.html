@@ -1,0 +1,123 @@
+<div class="tabs">
+  <input type="radio" id="tab1" name="tab-control" checked />
+  <input type="radio" id="tab2" name="tab-control" />
+  <input type="radio" id="tab3" name="tab-control" />
+  <input type="radio" id="tab4" name="tab-control" />
+  <input type="radio" id="tab5" name="tab-control" />
+  <input type="radio" id="tab6" name="tab-control" />
+  <ul (click)="resetForm()">
+    <li title="Todo">
+      <label for="tab1" role="button"> <span>Todo</span></label>
+    </li>
+    <li title="Estudio">
+      <label for="tab2" role="button"><span>Estudio</span></label>
+    </li>
+    <li title="Deporte">
+      <label for="tab3" role="button"><span>Deporte</span></label>
+    </li>
+    <li title="Idiomas">
+      <label for="tab4" role="button"><span>Idiomas</span></label>
+    </li>
+    <li title="Cultura">
+      <label for="tab5" role="button"><span>Cultura</span></label>
+    </li>
+    <li title="Ocio">
+      <label for="tab6" role="button"><span>Ocio</span></label>
+    </li>
+  </ul>
+
+  <div class="slider"><div class="indicator"></div></div>
+  <div class="content">
+    <section>
+      <br />
+
+      <ion-segment
+        (ionChange)="segmentChanged($event)"
+        mode="ios"
+        color="primary"
+        value="default"
+      >
+        <ion-segment-button value="new">
+          <ion-label>Nuevo</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="default">
+          <ion-label>Default</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </section>
+    <section>
+      <form [formGroup]="todoForm">
+        <div class="selector" style="float: left">
+          <ion-select
+            name="degree"
+            formControlName="degree"
+            placeholder="Carrera"
+            cancelText="Cancelar"
+            [interfaceOptions]="customActionSheetOptions"
+            interface="action-sheet"
+            (ionChange)="degreeSelected($event)"
+            #degreeSelection
+          >
+            <ion-select-option
+              *ngFor="let carrera of carreras; index as i"
+              [value]="i"
+            >
+              {{
+                carrera.degree + " (" + carrera.semester + ")" | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </div>
+        <div class="selector" style="float: right">
+          <ion-select placeholder="Asignatura" formControlName="subject">
+            <ion-select-option
+              *ngFor="let asginatura of asignaturas"
+              [value]="asginatura.$key"
+            >
+              {{
+                asginatura.nombreAsignatura | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </div>
+
+        <ion-segment
+          (ionChange)="segmentChanged($event)"
+          mode="ios"
+          color="primary"
+          value="recent"
+        >
+          <ion-segment-button value="rated">
+            <ion-label>Valoración</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="recent">
+            <ion-label>Recientes</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </form>
+    </section>
+    <section>
+      <h2>Shipping</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo
+      ducimus eius, magnam error quisquam sunt voluptate labore, excepturi
+      numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+    </section>
+    <section>
+      <h2>Returns</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero
+      rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam
+      ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus
+      eaque quidem incidunt.
+    </section>
+    <section>
+      <h2>OLA</h2>
+      probando jaJA SALU2
+    </section>
+  </div>
+  <div class="save">
+    <ion-chip color="primary" outline type="submit" (click)="submitForm()">
+      <ion-icon name="search-circle-outline" color="primary"></ion-icon>
+      <ion-label color="primary">Buscar</ion-label>
+    </ion-chip>
+  </div>
+</div>
