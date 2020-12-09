@@ -24,6 +24,10 @@ const routes: Routes = [
       import('./login/login.module').then((m) => m.LoginPageModule),
     canActivate: [AngularFireAuthGuard],
     data: {authGuardPipe: redirectLoggedInToItems}
+  },
+  {
+    path: 'upload-notes',
+    loadChildren: () => import('./upload-notes/upload-notes.module').then( m => m.UploadNotesPageModule)
   }
 ];
 

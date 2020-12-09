@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir apuntes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="4" size="12">
+        <ion-item>
+          <ion-label position="floating">Título</ion-label>
+          <ion-input
+            clearInput
+            autocapitalice="on"
+            maxlength="40"
+            placeholder="Introduce el título"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size-md="4" size="6">
+        <ion-item>
+          <ion-label position="floating">Selecciona carrera</ion-label>
+          <ion-select
+            name="degree"
+            placeholder="Carrera"
+            cancelText="Cancelar"
+            interface="popover"
+            #degreeSelection
+          >
+            <ion-select-option
+              *ngFor="let carrera of carreras; index as i"
+              [value]="i"
+            >
+              {{ carrera.degree + " (" + carrera.semester + ")" | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-md="4" size="6">
+        <ion-item>
+          <ion-label position="floating">Selecciona asignatura</ion-label>
+          <ion-select
+            name="degree"
+            placeholder="Asignatura"
+            cancelText="Cancelar"
+            interface="popover"
+            #degreeSelection
+          >
+            <ion-select-option
+              *ngFor="let carrera of carreras; index as i"
+              [value]="i"
+            >
+              {{ carrera.degree + " (" + carrera.semester + ")" | titlecase
+              }}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-md="10" size="12">
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-textarea
+            placeholder="Describe tus apuntes..."
+            autoGrow="true"
+          ></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment (ionChange)="segmentChanged($event)" value="archive">
+          <ion-segment-button value="archive">
+            <ion-label>Archivos (pdf, image)</ion-label>
+            <ion-icon name="document-outline"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="url">
+            <ion-label>Url (drive, dropbox, mega)</ion-label>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col size="12">
+        <archives-uploader *ngIf="uploadTab=='archive'"></archives-uploader>
+        <url-uploader *ngIf="uploadTab!='archive'"></url-uploader>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    
+    <ion-fab-button>
+      <ion-icon name="send-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>
