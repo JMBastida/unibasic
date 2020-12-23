@@ -1,0 +1,9 @@
+ion-grid {
+  width: 80%;
+}
+
+@media (max-width: 600px) {
+  ion-grid {
+    width: 90%;
+  }
+}

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificar Identidad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="center">
+    <ion-card *ngIf="photo">
+      <ion-card-content>
+        <img [src]="photo" />
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="!photo">
+      <ion-card-content>
+        <img src="assets/image-placeholder.jpg" />
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="buttons">
+    <ion-button size="medium" (click)="getPicture('camera')">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      <ion-label>Cámara</ion-label>
+    </ion-button>
+
+    <ion-button size="medium" (click)="getPicture('gallery')">
+      <ion-icon name="image" slot="start"></ion-icon>
+      <ion-label>Galería</ion-label>
+    </ion-button>
+  </div>
+
+  <!--<input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>-->
+</ion-content>
